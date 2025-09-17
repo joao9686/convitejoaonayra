@@ -1,0 +1,287 @@
+/* --------- Geral --------- */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #FAF9F6; /* off-white */
+  color: #4A3C3C;
+  text-align: center;
+}
+
+/* --------- Entrada --------- */
+#entrada {
+  padding: 3rem 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.arte-personalizada {
+  padding: 3rem 1rem;
+  background: #F5E1E1; /* rosa blush */
+  border: 3px dashed #EADBC8; /* champagne */
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.nomes {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  color: #803D3B; /* marsala */
+  margin: 0.5rem 0;
+}
+
+.data-casamento {
+  font-size: 1.2rem;
+  color: #D4AF37; /* dourado */
+  margin-top: 0.5rem;
+}
+
+/* --------- Modal --------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(234,219,200,0.4), rgba(245,225,225,0.4));
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.modal.ativo {
+  display: block;
+  opacity: 1;
+}
+
+/* --------- Carta --------- */
+.carta {
+  position: relative;
+  margin: 5% auto;
+  width: 90%;
+  max-width: 650px;
+  perspective: 2000px;
+  height: auto;
+  min-height: 500px;
+  border-radius: 20px;
+}
+
+.aba {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #FFF;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.aba.esquerda {
+  left: 0;
+  transform-origin: center left;
+}
+
+.aba.direita {
+  left: 50%;
+  transform-origin: center right;
+}
+
+.conteudo {
+  position: relative;
+  background: #FFF;
+  border: 4px double #EADBC8; /* champagne */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  padding: 3rem 2rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* animação abrindo */
+.carta.aberta .aba.esquerda {
+  animation: abrirEsquerda 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+
+.carta.aberta .aba.direita {
+  animation: abrirDireita 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+
+@keyframes abrirEsquerda {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-180deg); }
+}
+
+@keyframes abrirDireita {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(180deg); }
+}
+
+/* animação fechando */
+.carta.fechando .aba.esquerda {
+  animation: fecharEsquerda 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+
+.carta.fechando .aba.direita {
+  animation: fecharDireita 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+
+@keyframes fecharEsquerda {
+  from { transform: rotateY(-180deg); }
+  to { transform: rotateY(0deg); }
+}
+
+@keyframes fecharDireita {
+  from { transform: rotateY(180deg); }
+  to { transform: rotateY(0deg); }
+}
+
+
+/* --------- Botão fechar --------- */
+.close {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #803D3B;
+  cursor: pointer;
+}
+.close:hover { color: #4A3C3C; }
+
+/* --------- Convite --------- */
+.titulo-convite {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #803D3B;
+  margin-bottom: 1rem;
+}
+
+.date {
+  font-size: 1.3rem;
+  color: #D4AF37;
+  margin-bottom: 2rem;
+}
+
+.arte {
+  border: 2px dashed #EADBC8;
+  padding: 2rem;
+  margin: 2rem auto;
+  font-style: italic;
+  background: #F5E1E1;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(128,61,59,0.15);
+}
+
+.location {
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  color: #4A3C3C;
+}
+
+iframe {
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* --------- Botão --------- */
+.button {
+  background: linear-gradient(135deg, #803D3B, #D4AF37);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(128,61,59,0.25);
+}
+.button:hover {
+  background: linear-gradient(135deg, #B05A5A, #C9A646);
+  transform: translateY(-2px);
+}
+
+/* --------- Mensagem --------- */
+#mensagem {
+  color: #803D3B;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* --------- Chuva de Emojis --------- */
+#chuva-emojis {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.emoji {
+  position: absolute;
+  top: -50px;
+  font-size: clamp(1.2rem, 2vw, 2.5rem);
+  animation: cair linear forwards;
+  transition: transform 0.15s linear;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* --------- Responsividade --------- */
+@media (max-width: 768px) {
+  .nomes {
+    font-size: 2rem;
+  }
+  .data-casamento, .date {
+    font-size: 1rem;
+  }
+  .conteudo {
+    padding: 2rem 1rem;
+    max-width: 95%;
+  }
+  .arte {
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+  }
+  iframe {
+    height: 180px;
+  }
+  .button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nomes {
+    font-size: 1.6rem;
+  }
+  .titulo-convite {
+    font-size: 1.3rem;
+  }
+  .arte-personalizada {
+    padding: 2rem 1rem;
+    border-width: 2px;
+  }
+  .conteudo {
+    padding: 1.5rem 1rem;
+    border-width: 2px;
+  }
+  iframe {
+    height: 150px;
+  }
+  .aba {
+    width: 48%; /* evita corte no celular */
+  }
+  .carta {
+    min-height: 400px;
+  }
+}

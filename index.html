@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Convite de Casamento – João & Nayra</title>
+
+  <!-- Fonte cursiva -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Música -->
+  <audio id="musica" autoplay loop muted>
+    <source src="MUSICA.mp3" type="audio/mp3" />
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Página inicial -->
+  <div id="entrada">
+    <div class="arte-personalizada">
+      <h1 class="nomes">João & Nayra</h1>
+      <p class="data-casamento">25 de Setembro de 2025</p>
+    </div>
+    <button class="button" onclick="abrirConvite()">❤️ Abrir Convite ❤️</button>
+  </div>
+
+  <!-- Modal em formato de cartinha -->
+  <div id="conviteModal" class="modal">
+    <div class="carta">
+      <!-- Abas da carta -->
+      <div class="aba esquerda"></div>
+      <div class="aba direita"></div>
+
+      <!-- Conteúdo do convite -->
+      <div class="conteudo">
+        <span class="close" onclick="fecharConvite()">&times;</span>
+        <h1 class="titulo-convite">Convite de Casamento</h1>
+        <h2 class="nomes"> João & Nayra</h2>
+        <p class="date">26 de Setembro de 2025 - 17h</p>
+
+        <div class="arte">
+          <p>Com muita alegria, convidamos você para celebrar este momento único conosco.</p>
+        </div>
+
+        <div class="location">
+          <p>Cartorio 1 oficio – Centro</p>
+        </div>
+
+        <button class="button" onclick="confirmarPresenca()">Confirmar Presença</button>
+        <p id="mensagem"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container da chuva de emojis -->
+  <div id="chuva-emojis"></div>
+
+  <!-- JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>

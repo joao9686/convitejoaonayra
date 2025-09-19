@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Convite de Casamento – João & Nayra</title>
 
-  <!-- Fonte cursiva -->
+  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rouge+Script&display=swap" rel="stylesheet">
 
   <!-- CSS externo -->
   <link rel="stylesheet" href="style.css" />
@@ -22,8 +24,9 @@
   <!-- Página inicial -->
   <div id="entrada">
     <div class="arte-personalizada">
-      <h1 class="nomes">João & Nayra</h1>
-      <p class="data-casamento">25 de Setembro de 2025</p>
+      <img src="convite2.png" width="250px" class="imgconvite">
+      <h1 class="nomes"><i>Nayra & João</i></h1>
+      <p class="data-casamento">26 • 09 • 2025</p>
     </div>
     <button class="button" onclick="abrirConvite()">❤️ Abrir Convite ❤️</button>
   </div>
@@ -38,19 +41,36 @@
       <!-- Conteúdo do convite -->
       <div class="conteudo">
         <span class="close" onclick="fecharConvite()">&times;</span>
-        <h1 class="titulo-convite">Convite de Casamento</h1>
-        <h2 class="nomes"> João & Nayra</h2>
-        <p class="date">26 de Setembro de 2025 - 17h</p>
+          <!-- Flores decorativas -->
+        <img src="flores2.png" alt="Flores canto superior" class="flor flor-topo">
+        <img src="flores1.png" alt="Flores canto inferior" class="flor flor-baixo">
 
-        <div class="arte">
-          <p>Com muita alegria, convidamos você para celebrar este momento único conosco.</p>
+        <!-- Frase romântica -->
+        <p class="frase-romantica">“O amor tudo sofre, tudo crê, tudo espera, tudo suporta. 1 Coríntios 13:7”</p>
+
+        <!-- Imagem -->
+        <img src="convite2.png" alt="Arte do convite" class="imgconvite">
+
+        <!-- Nomes -->
+        <h1 class="nomes"><i>Nayra & João</i></h1>
+
+        <!-- Texto convidando -->
+        <p class="texto-convite">Têm a alegria de convidar você para celebrar este momento especial.</p>
+
+        <!-- Data -->
+        <p class="date">26 • 09 • 2025</p>
+
+        <!-- Rodapé com ícones -->
+        <div class="rodape-convite">
+          <div class="item-rodape">
+            <span class="icone">📍</span>
+            <p>Cartório 1º Ofício – Centro</p>
+          </div>
+          <div class="item-rodape">
+            <button class="button" onclick="confirmarPresenca()">Confirmar Presença</button>
+          </div>
         </div>
 
-        <div class="location">
-          <p>Cartorio 1 oficio – Centro</p>
-        </div>
-
-        <button class="button" onclick="confirmarPresenca()">Confirmar Presença</button>
         <p id="mensagem"></p>
       </div>
     </div>

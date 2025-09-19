@@ -1,8 +1,9 @@
 /* --------- Geral --------- */
 body {
+  height: 100vh;
   margin: 0;
   font-family: 'Georgia', serif;
-  background: #FAF9F6; /* off-white */
+  background: linear-gradient(180deg, #fffdf8 0%, #efe7e0 100%);
   color: #4A3C3C;
   text-align: center;
 }
@@ -16,8 +17,8 @@ body {
 
 .arte-personalizada {
   padding: 3rem 1rem;
-  background: #F5E1E1; /* rosa blush */
-  border: 3px dashed #EADBC8; /* champagne */
+  background-image: url('fundo.jpg');
+  border: 3px dashed #EADBC8;
   border-radius: 20px;
   max-width: 500px;
   margin: 2rem auto;
@@ -25,16 +26,18 @@ body {
 }
 
 .nomes {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-  color: #803D3B; /* marsala */
+  font-family: 'Rouge Script', cursive;
+  font-weight: lighter;
+  font-size: 2.9rem;
+  color: #803D3B;
   margin: 0.5rem 0;
 }
 
 .data-casamento {
-  font-size: 1.2rem;
-  color: #D4AF37; /* dourado */
+  font-size: 1.5rem;
+  color: #D4AF37;
   margin-top: 0.5rem;
+  font-family: 'Great Vibes', cursive;
 }
 
 /* --------- Modal --------- */
@@ -72,71 +75,38 @@ body {
   top: 0;
   width: 50%;
   height: 100%;
-  background: #FFF;
+  background: linear-gradient(180deg, #fffdf8 0%, #efe7e0 100%);
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   z-index: 2;
 }
 
-.aba.esquerda {
-  left: 0;
-  transform-origin: center left;
-}
-
-.aba.direita {
-  left: 50%;
-  transform-origin: center right;
-}
+.aba.esquerda { left: 0; transform-origin: center left; }
+.aba.direita { left: 50%; transform-origin: center right; }
 
 .conteudo {
   position: relative;
-  background: #FFF;
-  border: 4px double #EADBC8; /* champagne */
+  background: linear-gradient(180deg, #fffdf8 0%, #efe7e0 100%);
+  border: 4px double #EADBC8;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  padding: 3rem 2rem;
+  padding: 4rem 2.5rem 3rem 3.5rem; /* mais espaço no topo e na esquerda */
   z-index: 1;
   overflow: hidden;
 }
 
-/* animação abrindo */
-.carta.aberta .aba.esquerda {
-  animation: abrirEsquerda 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
-}
+/* animações abrir/fechar */
+.carta.aberta .aba.esquerda { animation: abrirEsquerda 1.2s forwards; }
+.carta.aberta .aba.direita { animation: abrirDireita 1.2s forwards; }
 
-.carta.aberta .aba.direita {
-  animation: abrirDireita 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
-}
+@keyframes abrirEsquerda { from { transform: rotateY(0deg); } to { transform: rotateY(-180deg); } }
+@keyframes abrirDireita { from { transform: rotateY(0deg); } to { transform: rotateY(180deg); } }
 
-@keyframes abrirEsquerda {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(-180deg); }
-}
+.carta.fechando .aba.esquerda { animation: fecharEsquerda 1.2s forwards; }
+.carta.fechando .aba.direita { animation: fecharDireita 1.2s forwards; }
 
-@keyframes abrirDireita {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(180deg); }
-}
-
-/* animação fechando */
-.carta.fechando .aba.esquerda {
-  animation: fecharEsquerda 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
-}
-
-.carta.fechando .aba.direita {
-  animation: fecharDireita 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
-}
-
-@keyframes fecharEsquerda {
-  from { transform: rotateY(-180deg); }
-  to { transform: rotateY(0deg); }
-}
-
-@keyframes fecharDireita {
-  from { transform: rotateY(180deg); }
-  to { transform: rotateY(0deg); }
-}
-
+@keyframes fecharEsquerda { from { transform: rotateY(-180deg); } to { transform: rotateY(0deg); } }
+@keyframes fecharDireita { from { transform: rotateY(180deg); } to { transform: rotateY(0deg); } }
 
 /* --------- Botão fechar --------- */
 .close {
@@ -158,9 +128,11 @@ body {
 }
 
 .date {
-  font-size: 1.3rem;
+  margin-top: -10px;
+  font-size: 1.5rem;
   color: #D4AF37;
   margin-bottom: 2rem;
+  font-family: 'Great Vibes', cursive;
 }
 
 .arte {
@@ -168,7 +140,7 @@ body {
   padding: 2rem;
   margin: 2rem auto;
   font-style: italic;
-  background: #F5E1E1;
+  background-image: url('fundo.jpg');
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(128,61,59,0.15);
 }
@@ -179,30 +151,33 @@ body {
   color: #4A3C3C;
 }
 
-iframe {
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
 /* --------- Botão --------- */
 .button {
-  background: linear-gradient(135deg, #803D3B, #D4AF37);
-  color: white;
-  border: none;
-  padding: 0.9rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 50px;
+  background: #fff; /* fundo branco delicado */
+  border: 1.5px solid #D4AF37; /* borda dourada fina */
+  color: #803D3B; /* texto vinho/chocolate */
+  padding: 0.6rem 1.4rem;
+  font-size: 1.5rem;
+  border-radius: 12px; /* bordas suaves, não tão arredondadas */
   cursor: pointer;
-  margin-top: 1.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(128,61,59,0.25);
-}
-.button:hover {
-  background: linear-gradient(135deg, #B05A5A, #C9A646);
-  transform: translateY(-2px);
+  margin-top: 1.2rem;
+  transition: all 0.25s ease;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
-/* --------- Mensagem --------- */
+.button:hover {
+  background: #D4AF37;  /* dourado no hover */
+  color: #fff;          /* contraste máximo */
+  transform: scale(1.03);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 #mensagem {
   color: #803D3B;
   font-weight: bold;
@@ -229,59 +204,92 @@ iframe {
 }
 
 @keyframes cair {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
+  to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
 /* --------- Responsividade --------- */
 @media (max-width: 768px) {
-  .nomes {
-    font-size: 2rem;
-  }
-  .data-casamento, .date {
-    font-size: 1rem;
-  }
-  .conteudo {
-    padding: 2rem 1rem;
-    max-width: 95%;
-  }
-  .arte {
-    padding: 1.5rem 1rem;
-    font-size: 0.95rem;
-  }
-  iframe {
-    height: 180px;
-  }
-  .button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
+  .nomes { font-size: 2rem; }
+  .data-casamento, .date { font-size: 1rem; }
+  .conteudo { padding: 2rem 1rem; max-width: 95%; }
+  .arte { padding: 1.5rem 1rem; font-size: 0.95rem; }
+  .button { padding: 0.8rem 1.5rem; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
-  .nomes {
-    font-size: 1.6rem;
-  }
-  .titulo-convite {
-    font-size: 1.3rem;
-  }
-  .arte-personalizada {
-    padding: 2rem 1rem;
-    border-width: 2px;
-  }
-  .conteudo {
-    padding: 1.5rem 1rem;
-    border-width: 2px;
-  }
-  iframe {
-    height: 150px;
-  }
-  .aba {
-    width: 48%; /* evita corte no celular */
-  }
-  .carta {
-    min-height: 400px;
-  }
+  .nomes { font-size: 1.6rem; }
+  .titulo-convite { font-size: 1.3rem; }
+  .arte-personalizada { padding: 2rem 1rem; border-width: 2px; }
+  .conteudo { padding: 1.5rem 1rem; border-width: 2px; }
+  .aba { width: 48%; }
+  .carta { min-height: 400px; }
+}
+
+/* --------- Imagem --------- */
+.imgconvite {
+  width: 200px;
+  height: 200px;
+  margin-bottom: -10px;
+}
+
+/* --------- Novos estilos --------- */
+.frase-romantica {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  color: #803D3B;
+  margin-bottom: 1rem;
+}
+
+.texto-convite {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 1rem 0;
+  color: #4A3C3C;
+}
+
+.rodape-convite {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-rodape {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icone {
+  font-size: 1.5rem;
+}
+
+
+.flor {
+  position: absolute;
+  width: 160px;   /* Ajuste o tamanho da flor */
+  height: auto;
+  pointer-events: none; /* não atrapalha cliques */
+  opacity: 0.5;   /* levemente transparente se quiser */
+  pointer-events: none;
+  z-index: 0;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.conteudo{
+  z-index: 1;
+  padding: 4rem 2.5rem 3rem 3.5rem; /* mais espaço no topo e na esquerda */
+
+}
+
+.flor-topo {
+  top: 10px;
+  left: 10px;
+}
+
+.flor-baixo {
+  bottom: 10px;
+  right: 10px;
 }

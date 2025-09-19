@@ -293,3 +293,15 @@ body {
   bottom: 10px;
   right: 10px;
 }
+
+.local{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  
+}
+
+.local p {
+  margin: 0; /* tira espaçamento padrão */
+  line-height: 1.4; /* controla a altura da linha para não ficar grudado demais */
+}
